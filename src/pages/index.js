@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import { useJsonForm } from "gatsby-tinacms-json"
 
 export default function IndexPage({ data }) {
-  const [page] = useJsonForm(data.dataJson)
+  const [page] = useJsonForm(data.dataJson, IndexPageForm)
 
   return (
     <Layout>
@@ -13,6 +13,17 @@ export default function IndexPage({ data }) {
       <p>{page.content}</p>
     </Layout>
   )
+}
+
+const IndexPageForm = {
+  label: "Page",
+  fields: [
+    {
+      label: "Title",
+      name: "rawJson.title",
+      component: "text",
+    },
+  ],
 }
 
 export const pageQuery = graphql`
