@@ -10,7 +10,6 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <h1>{page.title}</h1>
-      <p>{page.content}</p>
     </Layout>
   )
 }
@@ -30,7 +29,6 @@ export const pageQuery = graphql`
   query IndexPageQuery {
     dataJson {
       title
-      content
 
       rawJson
       fileRelativePath
