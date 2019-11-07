@@ -3,12 +3,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-tinacms",
       options: {
-        plugins: [
-          // We'll add some Tinacms plugins in the next step.
-        ],
+        plugins: ["gatsby-tinacms-git"],
       },
     },
-    "gatsby-tinacms-json",
+    `gatsby-tinacms-json`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,6 +15,5 @@ module.exports = {
         name: "data",
       },
     },
-    "gatsby-transformer-json",
   ],
 }
