@@ -1,25 +1,28 @@
 import React from "react"
 import Layout from "../components/layout"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import { useJsonForm } from "gatsby-tinacms-json"
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query IndexQuery {
-      dataJson {
-        title
-        content
-      }
-    }
-  `)
+export default function IndexPage({ data }) {
+  const [page] = useJsonForm(data.dataJson)
 
   return (
     <Layout>
-      <h1>{data.dataJson.title}</h1>
-      <p>{data.dataJson.content}</p>
+      <h1>{page.title}</h1>
+      <p>{page.content}</p>
     </Layout>
   )
 }
 
-export default IndexPage
+export const pageQuery = graphql`
+  query IndexPageQuery {
+    dataJson {
+      title
+      content
+
+      rawJson
+      fileRelativePath
+    }
+  }
+`
