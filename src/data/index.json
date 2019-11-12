@@ -6,6 +6,10 @@
       "_template": "ListItemBlock"
     },
     {
+      "title": "New Item 1",
+      "_template": "ListItemBlock"
+    },
+    {
       "title": "New Item 2",
       "_template": "ListItemBlock"
     },
@@ -15,6 +19,10 @@
     },
     {
       "title": "New Item 4",
+      "_template": "ListItemBlock"
+    },
+    {
+      "title": "New Item 5",
       "_template": "ListItemBlock"
     }
   ]
