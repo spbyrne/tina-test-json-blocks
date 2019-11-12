@@ -2,19 +2,19 @@
   "title": "Test Title",
   "blocks": [
     {
-      "label": "New Item",
+      "title": "New Item",
       "_template": "ListItemBlock"
     },
     {
-      "label": "New Item 2",
+      "title": "New Item 2",
       "_template": "ListItemBlock"
     },
     {
-      "label": "New Item 3",
+      "title": "New Item 3",
       "_template": "ListItemBlock"
     },
     {
-      "label": "New Item 4",
+      "title": "New Item 4",
       "_template": "ListItemBlock"
     }
   ]

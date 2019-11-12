@@ -14,7 +14,7 @@ export default function IndexPage({ data }) {
       <ul>
         {page.blocks &&
           page.blocks.map(data => {
-            return <li>{data.label}</li>
+            return <li>{data.title}</li>
           })}
       </ul>
     </Layout>
@@ -23,10 +23,11 @@ export default function IndexPage({ data }) {
 
 export const ListItemBlock = {
   label: "List Item",
+  name: "title",
   defaultItem: {
-    label: "New Item",
+    title: "New Item",
   },
-  fields: [{ name: "label", label: "Label", component: "text" }],
+  fields: [{ name: "title", label: "Item Name", component: "text" }],
 }
 
 const IndexPageForm = {
@@ -53,7 +54,8 @@ export const pageQuery = graphql`
     dataJson {
       title
       blocks {
-        label
+        title
+        _template
       }
 
       rawJson
