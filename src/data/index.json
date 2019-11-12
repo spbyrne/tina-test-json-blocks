@@ -1,4 +1,21 @@
 {
   "title": "Test Title",
-  "content": "Integer nisi erat, lobortis sit amet orci vel, consequat mattis justo."
+  "blocks": [
+    {
+      "label": "New Item",
+      "_template": "ListItemBlock"
+    },
+    {
+      "label": "New Item 2",
+      "_template": "ListItemBlock"
+    },
+    {
+      "label": "New Item 3",
+      "_template": "ListItemBlock"
+    },
+    {
+      "label": "New Item 4",
+      "_template": "ListItemBlock"
+    }
+  ]
 }

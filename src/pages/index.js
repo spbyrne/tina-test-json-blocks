@@ -10,8 +10,23 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <h1>{page.title}</h1>
+
+      <ul>
+        {page.blocks &&
+          page.blocks.map(data => {
+            return <li>{data.label}</li>
+          })}
+      </ul>
     </Layout>
   )
+}
+
+export const ListItemBlock = {
+  label: "List Item",
+  defaultItem: {
+    label: "New Item",
+  },
+  fields: [{ name: "label", label: "Label", component: "text" }],
 }
 
 const IndexPageForm = {
@@ -22,6 +37,14 @@ const IndexPageForm = {
       name: "rawJson.title",
       component: "text",
     },
+    {
+      label: "List Items",
+      name: "rawJson.blocks",
+      component: "blocks",
+      templates: {
+        ListItemBlock,
+      },
+    },
   ],
 }
 
@@ -29,6 +52,9 @@ export const pageQuery = graphql`
   query IndexPageQuery {
     dataJson {
       title
+      blocks {
+        label
+      }
 
       rawJson
       fileRelativePath
